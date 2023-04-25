@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block main_content %}
+
+<div class="container">
+    <h2>Messages from users</h2>
+    <hr>
+    {% for message in messages %}
+        <div class="request-item">
+            <h4>{{ message.name }}</h4>
+            <p>{{ message.phone }}</p>
+            <p>{{ message.message }}</p>
+            <p>{{ message.email }}</p>
+            <a href="{% url 'manager:update_message' pk=message.pk %}" class="btn btn-primary">Message processed</a>
+        </div>
+    {% empty %}
+        <p>No message found.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block main_content %}
+<div class="contact_section layout_padding">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mail_main">
+                <h1 class="contact_taital">Registration</h1>
+                <form method="post">
+                    {% csrf_token %}
+                <div class="form-group">
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    {{ form.password }}
+                </div>
+                <div class="form-group">
+                    {{ form.password2 }}
+                </div>
+                <div class="form-group">
+                    {{ form.manager_ind }}
+                </div>
+                <button class="btn btn-primary" type="submit">Register</button>
+                </form>
+                {% if form.errors %}
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

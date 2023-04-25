@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+
+{% block main_content %}
+    <!-- banner section end -->
+    <div class="banner_section layout_padding">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+           <div class="carousel-inner">
+
+            {% for gallery_item in gallery %}
+               {% if forloop.first %}
+                  <div class="carousel-item active">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <h1 class="banner_taital">{{ gallery_item.black_text }} <span style="color: #f3801f;">{{ gallery_item.orange_text}}</span></h1>
+                           </div>
+                           <div class="col-md-6">
+                              <div><img src={{ gallery_item.image.url }} class="image_1"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               {% else %}
+                  <div class="carousel-item">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <h1 class="banner_taital">{{ gallery_item.black_text }} <span style="color: #f3801f;">{{ gallery_item.orange_text}}</span></h1>
+                           </div>
+                           <div class="col-md-6">
+                              <div><img src= {{ gallery_item.image.url }} class="image_1"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               {% endif %}
+            {% endfor %}
+
+           </div>
+           <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="next">
+              <i class="fa fa-angle-left"></i>
+           </a>
+           <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+              <i class="fa fa-angle-right"></i>
+           </a>
+        </div>
+     </div>
+     <div class="container">
+        <div class="play_icon"><a href="#"><img src="static/images/play-icon.png"></a></div>
+     </div>
+     <!-- banner section end -->
+    <!-- about section start -->
+    {% include 'about.html' %}
+    <!-- about section end -->
+    <!-- booking section start -->
+    <div class="booking_section">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="booking_taital">Book Now Table</h1>
+                <p class="booking_text">It is a long established fact that a reader will be </p>
+            </div>
+            <div class="col-md-6">
+                <div class="booking_bt"><a href="/contact">Book Table For Tea</a></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- booking section end -->
+    <!-- services section start -->
+    {% include 'our_tea_serveces.html' %}
+    <!-- services section end -->
+    <!-- choose section start -->
+    {% include 'why_choose_us.html' %}
+    <!-- choose section end -->
+    <!-- shop section start -->
+    {% include 'our_tea_shop.html' %}
+    <!-- shop section end -->
+    <!-- frequently section start -->
+    {% include 'frequently_asked_questions.html' %}
+    <!-- frequently section end -->
+    <!-- clients section start -->
+    {% include 'clients_testimonial.html' %}
+    <!-- clients section end -->
+    <!-- contact section start -->
+    {% include 'contact_us.html' %}
+    <!-- contact section end -->
+
+{% endblock %}
