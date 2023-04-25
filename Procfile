@@ -1,0 +1,1 @@
+web: gunicorn Test_of_tea.wsgi --log-file -
