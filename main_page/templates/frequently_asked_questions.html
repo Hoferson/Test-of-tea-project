@@ -30,13 +30,13 @@
 
                     {% else %}
                         <div class="card">
-                        <div class="card-header" id="headingThree">
+                        <div class="card-header" id="heading{{ question.position }}">
                             <h2 class="mb-0">
                                 <button type="button" class="btn btn-link collapsed w-100" data-toggle="collapse"
-                                    data-target="#collapseThree"><i class="fa fa-plus"></i>{{question.question}}</button>
+                                    data-target="#collapse{{ question.position }}"><i class="fa fa-plus"></i>{{question.question}}</button>
                             </h2>
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        <div id="collapse{{ question.position }}" class="collapse" aria-labelledby="heading{{ question.position }}"
                             data-parent="#accordionExample">
                             <div class="card-body">
                                 <p>{{question.answer}}<a
