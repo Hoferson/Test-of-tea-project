@@ -9,7 +9,7 @@
                     <div class="container">
                         <h1 class="shop_taital">{{ shop_item.title }}</h1>
                         <p class="shop_text">{{ shop_item.text}}</p>
-                        <div><img src={{ shop_item.image.url }} class="image_3"></div>
+                        <div><img src={{ shop_item.image.url }} class="image_3" onerror="this.src='static/images/img-3.png';" alt="Image"></div>
                     </div>
                 </div>
             {% else %}
@@ -17,7 +17,7 @@
                     <div class="container">
                         <h1 class="shop_taital">{{ shop_item.title }}</h1>
                         <p class="shop_text">{{ shop_item.text}}</p>
-                        <div><img src={{ shop_item.image.url }} class="image_3"></div>
+                        <div><img src={{ shop_item.image.url }} class="image_3" onerror="this.src='static/images/img-3.png';" alt="Image"></div>
                     </div>
                 </div>
             {% endif %}
