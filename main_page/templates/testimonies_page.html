@@ -10,7 +10,7 @@
                    <div class="container">
                        <h1 class="clients_taital">{{ testimonial_item.title }}</h1>
                        <p class="clients_text">{{ testimonial_item.text }}</p>
-                       <div class="client_img"><img src={{ testimonial_item.photo.url }}></div>
+                       <div class="client_img"><img src={{ testimonial_item.photo.url }} onerror="this.src='static/images/client-img.png';" alt="Image"></div>
                        <h1 class="louis_text">{{ testimonial_item.first_name }} {{ testimonial_item.last_name }}</h1>
                        <h1 class="smyth_text">{{ testimonial_item.surname }}</h1>
                        <div class="border"></div>
@@ -22,7 +22,7 @@
                    <div class="container">
                        <h1 class="clients_taital">{{ testimonial_item.title }}</h1>
                        <p class="clients_text">{{ testimonial_item.text }}</p>
-                       <div class="client_img"><img src={{ testimonial_item.photo.url }}></div>
+                       <div class="client_img"><img src={{ testimonial_item.photo.url }} onerror="this.src='static/images/client-img.png';" alt="Image"></div>
                        <h1 class="louis_text">{{ testimonial_item.first_name }} {{ testimonial_item.last_name }}</h1>
                        <h1 class="smyth_text">{{ testimonial_item.surname }}</h1>
                        <div class="border"></div>
